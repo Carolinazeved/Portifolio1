@@ -27,11 +27,11 @@ body {
  .image-logo{
     max-width: 650px; /* Defina um tamanho apropriado */
     height: auto; /* Mantém a proporção da imagem */
-    margin-left: 60%; /* Move a logo mais para a direita */    
+    margin-left: 55%; /* Move a logo mais para a direita */    
  }
 
  .menu-container {
-     position:fixed;
+     position:relative;
      left: 0;
      top: 0;
      height: 100vh;
@@ -39,35 +39,19 @@ body {
      align-items: center;
  }
 
- /*.menu-toggle {
-     width: 30px;
-     height: 100px;
-     background: rgba(161, 155, 146, 0.8);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     cursor: pointer;
-     font-size: 20px;
-     writing-mode: vertical-rl;
-     text-orientation: upright;
-     position: absolute;
-     left: 0;
-     top: 50%;
-     transform: translateY(-50%);
-     border-radius: 0 80px 80px 0;
- }*/
 
  .menu {
-     position: fixed;
-     left: -250px;
+     position: relative;
+     left: -270px;
      top: 0;
-     width: 250px;
+     width: 280px;
      height: 100vh;
      background: rgba(108, 92, 59, 0.8);
      padding: 60px 20px;
-     margin-left: 20px;
+     margin-left: 5px;
      backdrop-filter: blur(5px);
-     transition: left 0.3s ease;
+     transition: left 0.4s ease-in-out; /* Efeito mais fluído */
+     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
  }
 
  .menu-container:hover .menu {
@@ -85,18 +69,22 @@ body {
  }
 
  .menu ul li a {
-     color: white;
-     text-decoration: none;
-     font-size: 18px;
-     display: block;
-     padding: 10px;
-     transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 12px 20px;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
  }
 
  .menu ul li a:hover {
-     background: rgba(255, 255, 255, 0.2);
-     border-radius: 5px;
- }
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
 
  header {
      text-align: center;
@@ -209,6 +197,8 @@ body {
     justify-content: center;
     padding: 20px;
     gap: 30px;
+    background-color:  rgba(105, 98, 84, 0.8);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     
  }
 
@@ -219,7 +209,6 @@ body {
     height: auto;
     padding: 39px 20px;
     font-size: 15px;
-    background-color:  rgba(105, 96, 78, 0.8);
     border-radius: 25px 5px 25px 5px;
     margin-left: 10%;
     text-align: justify;
@@ -239,20 +228,300 @@ body {
  }
 
  .card {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto 40px;
+    width: 100%;
+    max-width: 90%;
+    margin: 20px auto;
     padding: 20px;
-    background-color:  rgba(105, 96, 78, 0.8);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .card-text {
-    font-size: 1.5rem;
-    font-family: 'Dm serif text', serif;
-    color:  #d7d4ba;;
-    font-weight:400;
+    font-size: 1.3rem; /* Diminui um pouco o tamanho da fonte */
+    font-family: 'DM Serif Text', serif;
+    color: rgb(46, 34, 28);
+    font-weight: 400;
     font-style: italic;
+    text-align: center;
+    max-width: 100%; /* Faz o texto ocupar mais as laterais */
+    margin: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita a 2 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+
+/* === MENU LATERAL RESPONSIVO === */
+.menu-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.menu {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: rgba(108, 92, 59, 0.8;
+    padding: 60px 20px;
+    transition: left 0.4s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão para abrir/fechar menu */
+.menu-toggle {
+    position: absolute;
+    left: 100%;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(105, 98, 84, 0.8;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.menu ul li {
+    margin: 25px 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 12px 20px;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu ul li a:hover {
+    background: rgba(105, 98, 84, 0.8);
+    transform: scale(1.05);
+}
+
+/* Seção Principal */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Seção Sobre Mim */
+.sobremim {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+    background-color: rgba(105, 98, 84, 0.8);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sobremim-texto {
+    text-indent: 15px;
+    max-width: 100%;
+    width: 500px;
+    padding: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+    text-align: justify;
+    line-height: 1.8;
+    font-family: 'Dm serif text', serif;
+}
+
+.imagem-perfil {
+    max-width: 100%;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Seção Serviços */
+.servicos {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: rgba(108, 92, 59, 0.8);
+    padding: 40px;
+    opacity: 0;
+    animation: slideIn 1s forwards, blink 2.5s infinite;
+}
+
+/* Animação de deslizar */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação de piscar */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Botões */
+.botao {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.botao1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    gap: 10px;
+    color: #d7d4ba;
+}
+
+.botao1:hover {
+    background-color: rgba(108, 92, 59, 0.8);
+    text-decoration: none;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(108, 92, 59, 0.8);
+}
+
+/* === MEDIA QUERIES === */
+/* Telas menores que 1024px (Tablets e alguns notebooks) */
+@media (max-width: 1024px) {
+    .menu {
+        width: 250px;
+    }
+
+    .sobremim {
+        padding: 15px;
+    }
+
+    .servicos {
+        font-size: 24px;
+        gap: 30px;
+    }
+
+    .botao {
+        gap: 15px;
+    }
+}
+
+/* Telas menores que 768px (Celulares grandes) */
+@media (max-width: 768px) {
+    .menu {
+        width: 100%;
+        left: -100%;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .sobremim {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobremim-texto {
+        margin:auto;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .imagem-perfil {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .servicos {
+        flex-direction: column;
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .botao {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Telas menores que 480px (Celulares pequenos) */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .image-logo {
+        max-width: 180px;
+    }
+
+    .sobremim-texto {
+        margin:auto;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .botao {
+        gap: 8px;
+    }
 }
