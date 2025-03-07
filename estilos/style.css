@@ -217,7 +217,7 @@ body {
     max-width: 100%;
     width: 500px;
     height: auto;
-    padding: 40px 20px;
+    padding: 39px 20px;
     font-size: 15px;
     background-color:  rgba(105, 96, 78, 0.8);
     border-radius: 25px 5px 25px 5px;
@@ -231,7 +231,7 @@ body {
 
  .imagem-perfil {
     max-width: 100%;
-    width: 55px;
+    width: 550px;
     height: auto;
     border-radius: 5px 25px 5px 25px;
     margin-right: 10%;
