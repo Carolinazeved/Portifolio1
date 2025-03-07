@@ -136,3 +136,82 @@ footer {
        transform: translateY(0);
    }
 }
+
+
+/* === MEDIA QUERIES PARA RESPONSIVIDADE === */
+
+/* Tablets e telas menores que 1024px */
+@media (max-width: 1024px) {
+   .image-logo {
+       max-width: 280px;
+   }
+
+   .botao {
+       gap: 15px;
+   }
+
+   .carrossel {
+       padding: 20px;
+   }
+
+   .swiper-slide img {
+       width: 80%;
+   }
+}
+
+/* Celulares grandes (768px para baixo) */
+@media (max-width: 768px) {
+   .header {
+       flex-direction: column;
+       text-align: center;
+       padding: 10px;
+   }
+
+   .image-logo {
+       max-width: 220px;
+   }
+
+   .carrossel {
+       margin: 0;
+       padding: 10px;
+   }
+
+   .swiper-slide img {
+       width: 100%;
+   }
+
+   .botao {
+       flex-direction: column;
+       gap: 10px;
+   }
+
+   .botao-voltar {
+       font-size: 14px;
+       padding: 8px 16px;
+   }
+
+   .icone-voltar {
+       width: 12px;
+       height: 12px;
+   }
+}
+
+/* Celulares pequenos (480px para baixo) */
+@media (max-width: 480px) {
+   .image-logo {
+       max-width: 180px;
+   }
+
+   .botao {
+       gap: 8px;
+   }
+
+   .botao-voltar {
+       padding: 8px 14px;
+   }
+
+   .icone-voltar {
+       width: 10px;
+       height: 10px;
+   }
+}
