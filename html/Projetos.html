@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&display=swap" rel="stylesheet"> <!-- Fonte Lora -->
+    <link rel="stylesheet" href="/estilos/projetos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>Projetos</title>
+</head>
+<body>
+  
+    <header>
+        <section class="carrossel">
+            <h2 class="carrossel__titulo"><img src="/img/logo-removebg-preview.png" alt="logo" class="image-logo"></h2>
+            <div class="swiper swiper--projetos">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/img/3.png" alt="Casacor"></div>
+                    <div class="swiper-slide"><img src="/img/4.png" alt="Casacor"></div>
+                    <div class="swiper-slide"><img src="/img/5.png" alt="Casacor"></div>
+                    <div class="swiper-slide"><img src="/img/6.png" alt="Casacor"></div>
+                    <div class="swiper-slide"><img src="/img/8.png" alt="CindyPalmeira"></div>
+                    <div class="swiper-slide"><img src="/img/9.png" alt="CindyPalmeira"></div>
+                    <div class="swiper-slide"><img src="/img/10.png" alt="CindyPalmeira"></div>
+                    <div class="swiper-slide"><img src="/img/11.png" alt="airbnb"></div>
+                    <div class="swiper-slide"><img src="/img/12.png" alt="airbnb"></div>
+                    <div class="swiper-slide"><img src="/img/13.png" alt="airbnb"></div>
+                    <div class="swiper-slide"><img src="/img/14.png" alt="airbnb"></div>
+                    
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            </section>
+            <!-- Novo botão "Voltar" no final da página -->
+
+    <div class="container-voltar">
+        <a href="../index.html" class="botao-voltar">
+            <div class="icon-voltar">
+                <!-- Ícone de voltar (imagem) -->
+                <img src="/img/desfazer.png" alt="Voltar" class="icone-voltar">
+            </div>
+            <span>Home</span> <!-- Texto adicional para o botão -->
+        </a>
+    </div>
+
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiperNovidades = new Swiper('.swiper--projetos', {
+                spaceBetween: 10,
+                slidesPerView: 3,
+                pagination: { 
+                    el: '.swiper-pagination', 
+                    type: 'bullets' 
+                },
+                autoplay: { 
+                    delay: 5000 
+                },
+                loop: true
+            });
+        });
+    </script>
+    
+</body>
+<footer>
+        <div class="botao">
+            <a href="https://instagram.com/andersoncosta.pd/" target="_blank"class="botao1"><img src="/img/icon-instagram.png" alt="instagram" id="icon-instagram" class="icone">Instagram</a>
+            <a href="https://wa.me/message/5W45DRYITSYBD1" target="_blank" class="botao1"><img src="/img/icon-whatsapp.png" alt="whatsapp" id="icon-whatsapp" class="icone">Whatsapp</a>
+        </div>
+    </footer>
+</html>
