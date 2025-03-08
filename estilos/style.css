@@ -5,13 +5,14 @@
      box-sizing: border-box;
 }
 
-body {
+body, html {
+     height: 100%; 
      font-family: Arial, Helvetica, sans-serif;
      color: #333;
      backdrop-filter: blur(5px);
      transition: left 0.3s ease;
      line-height: 1.6;
-     background-image: url('/img/1corte.PNG'); /* Imagem de fundo para a página inteira */
+     background-image: url('/img/480px.PNG'); /* Imagem de fundo para a página inteira */
      background-size: cover; /* Faz a imagem cobrir toda a tela */
      background-position: center; /* Centraliza a imagem */
      background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
@@ -31,17 +32,18 @@ body {
  }
 
  .menu-container {
-     position:relative;
+     position:fixed;
      left: 0;
      top: 0;
-     height: 100vh;
-     display: flex;
-     align-items: center;
+     height: 100%;
+     z-index: 1000;
+     overflow-y: auto; /* Permite rolar o conteúdo do menu */
+     transition: left 0.3s ease; /* Transição suave */
  }
 
 
  .menu {
-     position: relative;
+     position: fixed;    
      left: -270px;
      top: 0;
      width: 280px;
@@ -99,7 +101,8 @@ body {
      align-items: center;
      justify-content: space-between;
      padding: 60px;
-    margin-bottom: 15%;
+    margin-bottom: 20%;
+    flex: 1; /* Faz o conteúdo principal expandir e empurrar o footer para baixo */
  }
 
 
@@ -153,9 +156,10 @@ body {
 
  footer {
      text-align: center;
-     padding: 10px;
+     padding: 20px;
      background-color:rgba(108, 92, 59, 0.8); /* Fundo escuro para o footer */
      margin: auto;
+     width: 100%;
  }
 
  .botao {
@@ -279,7 +283,7 @@ body {
     top: 0;
     width: 280px;
     height: 100vh;
-    background: rgba(108, 92, 59, 0.8;
+    background: rgba(108, 92, 59, 0.8);
     padding: 60px 20px;
     transition: left 0.4s ease-in-out;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
@@ -292,7 +296,7 @@ body {
     top: 20px;
     width: 40px;
     height: 40px;
-    background: rgba(105, 98, 84, 0.8;
+    background: rgba(105, 98, 84, 0.8);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -505,6 +509,25 @@ footer {
 
 /* Telas menores que 480px (Celulares pequenos) */
 @media (max-width: 480px) {
+   
+    .body {
+    height: 100%; 
+    display: grid;
+     background-image: url('/img/480px.PNG');
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+     max-width: 1020px;
+     
+    }
+    main {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 150px 150px 250px 150px;
+     margin-bottom: 20%;
+     flex: 1; /* Faz o conteúdo principal expandir e empurrar o footer para baixo */
+    }
     .header {
         flex-direction: column;
         text-align: center;
@@ -512,7 +535,8 @@ footer {
     }
 
     .image-logo {
-        max-width: 180px;
+        max-width: 250px;
+        margin: auto;
     }
 
     .sobremim-texto {
@@ -524,4 +548,59 @@ footer {
     .botao {
         gap: 8px;
     }
+  
+   .menu-container{
+    gap: 20px;
+   }
+
+    .menu {
+        position: relative;
+        left: -170px;
+        top: 0;
+        width: 180px;
+        height: 100%;
+        margin-bottom: auto;
+        background: rgba(108, 92, 59, 0.8);
+        padding: 10px;
+        margin-left: 5px;
+        backdrop-filter: blur(5px);
+        transition: left 0.4s ease-in-out; /* Efeito mais fluído */
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+       
+    }
+   
+    .menu-container:hover .menu {
+        left: 0;
+    }
+   
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+       
+    }
+   
+    .menu ul li {
+        margin: 0 0;
+       
+    }
+   
+    .menu ul li a {
+       color: white;
+       text-decoration: none;
+       font-size: 10px;
+       display: block;
+       padding: 10px 5px;
+             
+    }
+
+    .botao {
+        flex-direction: row; /* Altera para coluna em telas pequenas */
+        gap: 5px; /* Reduz o espaçamento para melhor organização */
+   } 
+   
+   .footer {
+    margin-top: auto;
+    text-align: center;
+   } 
 }

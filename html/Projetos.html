@@ -12,7 +12,9 @@
   
     <header>
         <section class="carrossel">
-            <h2 class="carrossel__titulo"><img src="/img/logo-removebg-preview.png" alt="logo" class="image-logo"></h2>
+            <h2 class="carrossel__titulo">
+                <a href="../index.html"><img src="/img/logo-removebg-preview.png" alt="logo" class="image-logo"></a>
+            </h2>
             <div class="swiper swiper--projetos">
                 <div class="swiper-pagination"></div>
                 <div class="swiper-wrapper">
@@ -59,7 +61,12 @@
                 autoplay: { 
                     delay: 5000 
                 },
-                loop: true
+                loop: true,
+                breakpoints: {
+                320: { slidesPerView: 1 }, // Celulares muito pequenos
+                480: { slidesPerView: 2 }, // Quando for 480px ou menos
+                1024: { slidesPerView: 3 } // Padrão para desktops
+                }
             });
         });
     </script>
