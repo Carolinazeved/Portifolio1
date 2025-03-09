@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,6 +9,7 @@
    <link rel="stylesheet" href="/estilos/style.css">
 </head>
 <body>
+    <script src="../app.js"></script>
     <div class="menu-container">
         <!--<div class="menu-toggle"><img src="/img/botao-play.png" alt="botao-play"></div>-->
         <div class="menu">
@@ -18,9 +20,27 @@
             </ul>
         </div>
     </div>
+       
     <header class="header">
         <h1><img src="/img/logo-removebg-preview.png" alt="logo" class="image-logo"></h1>
     </header>
+    
+    <!-- Menu Mobile -->
+<section class="cabeçalho">
+    <nav>
+        <div class="menu-toggle">
+            <input type="checkbox" id="menu-toggle-checkbox">
+            <label for="menu-toggle-checkbox" aria-label="Abrir menu">
+                <span class="hamburguer"></span>
+            </label>
+        </div>
+        <ul class="lista-menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="/html/Sobremim.html">Sobre</a></li>
+            <li><a href="/html/Projetos.html">Projetos</a></li>
+        </ul>
+    </nav>
+</section>
     <main>
         <ul class="servicos">
          <li class="servico-descricao"> ARQUITETURA</li>
@@ -35,6 +55,7 @@
             <a href="https://wa.me/message/5W45DRYITSYBD1" target="_blank" class="botao1"><img src="/img/icon-whatsapp.png" alt="whatsapp" id="icon-whatsapp" class="icone">Whatsapp</a>
         </div>
     </footer>
+    
 </body>
 
 </html>

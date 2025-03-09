@@ -19,6 +19,11 @@ body, html {
      color: white; /* Cor do texto para contraste */
  }
 
+ img {
+    max-width: 100%;
+    height: auto;
+}
+
  .header{
     display: flex;
     align-items: center;
@@ -267,86 +272,6 @@ body, html {
 }
 
 
-
-/* === MENU LATERAL RESPONSIVO === */
-.menu-container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 1000;
-}
-
-.menu {
-    position: fixed;
-    left: -280px;
-    top: 0;
-    width: 280px;
-    height: 100vh;
-    background: rgba(108, 92, 59, 0.8);
-    padding: 60px 20px;
-    transition: left 0.4s ease-in-out;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Botão para abrir/fechar menu */
-.menu-toggle {
-    position: absolute;
-    left: 100%;
-    top: 20px;
-    width: 40px;
-    height: 40px;
-    background: rgba(105, 98, 84, 0.8);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 22px;
-    transition: 0.3s;
-}
-
-.menu.active {
-    left: 0;
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 50px;
-}
-
-.menu ul li {
-    margin: 25px 0;
-}
-
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 12px 20px;
-    transition: 0.3s;
-    border-radius: 5px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.menu ul li a:hover {
-    background: rgba(105, 98, 84, 0.8);
-    transform: scale(1.05);
-}
-
-/* Seção Principal */
-main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 40px;
-}
-
 /* Seção Sobre Mim */
 .sobremim {
     display: flex;
@@ -447,6 +372,12 @@ footer {
     background-color: rgba(108, 92, 59, 0.8);
 }
 
+.menu-toggle { display: none;} /*sumir o menu hamburguer só no pc*/
+
+
+
+
+
 /* === MEDIA QUERIES === */
 /* Telas menores que 1024px (Tablets e alguns notebooks) */
 @media (max-width: 1024px) {
@@ -468,16 +399,65 @@ footer {
     }
 }
 
+.lista-menu {
+    display: none;
+}
 /* Telas menores que 768px (Celulares grandes) */
 @media (max-width: 768px) {
-    .menu {
+
+      .menu {
+        display: none;
+    }
+    
+    .cabeçalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        left: -100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 30px;
+        background-color: rgba(108, 92, 59, 0.65);
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin: auto;
+      
     }
 
-    .menu.active {
-        left: 0;
+    .lista-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #d7d4ba;
+        font-size: 18px;
+        padding: 0 50px;
+        font-family: 'DM Serif Text', serif;
+        user-select: none;
+        cursor: pointer;
+        list-style: none; /* Remove as bolinhas */
+        gap: 50px;
+        
+       
     }
+    .lista-menu li a {
+        text-decoration: none; /* Remove o sublinhado */
+        color: #d7d4ba; /* Define a cor do texto */
+        font-weight: 400; /* Deixa o texto mais destacado */
+        text-transform: uppercase;
+    }  
+    
+    .lista-menu li a:hover {
+        text-decoration: underline;
+        background-color: rgba(108, 92, 59, 0.8);
+        font-weight: bold;
+        transition: 0.5s;
+       
+
+    }
+    
+ 
 
     .sobremim {
         flex-direction: column;
